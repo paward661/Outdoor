@@ -1,0 +1,49 @@
+/* Basic styling for the dropdown menu */
+.menu {
+    position: relative;
+}
+
+#menu-button {
+    background-color: #0074d9;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#dropdown li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#dropdown li:last-child {
+    border-bottom: none;
+}
+
+#dropdown a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Show the dropdown when the button is clicked */
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
