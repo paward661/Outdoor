@@ -61,3 +61,15 @@
     box-sizing: border-box;
     padding: 20px;
 }
+
+.battery-icon {
+    width: 24px;
+    height: 24px;
+    fill: #ccc; /* Default color for the battery */
+}
+  
+/* Adjust the fill color based on the status */
+.battery-icon.green {
+    fill: green; /* Change the battery color to green */
+}
+  
