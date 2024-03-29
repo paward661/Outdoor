@@ -19,7 +19,7 @@
 
 /* Set the background image on a container */
 .background-container {
-    background-image: url('000000010009.jpg');
+    background-image: url('../images/000000010009.jpg');
     background-size: 100% auto; /* 100% width and auto height */
     background-position: center 30%; /* Position at the top center of the container */
     background-repeat: no-repeat; /* Prevent image from repeating */
