@@ -6,46 +6,52 @@
     <title>OUTDOOR</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" href="css/dropdownMenu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Linking Font Awesome CSS -->
 </head>
 <body>
-    <div class="background-container"></div>
-    <div class="content">
-        <h1>OUTDOOR</h1>
-        <div class="menu">
-            <button id="menu-button" class="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <!-- <button id="menu-button"></button> -->
-            <ul id="dropdown" class="hidden">
-                <li><a href="calendar.html">schedule</a></li>
-                <li><a href="#">Item 2</a></li>
-                <li><a href="#">Item 3</a></li>
-            </ul>
+    <main>
+        <div class="background-container"></div>
+        <div class="content">
+            <h1>OUTDOOR</h1>
+            <div class="menu">
+                <button id="menu-button" class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <!-- <button id="menu-button"></button> -->
+                <ul id="dropdown" class="hidden">
+                    <li><a href="calendar.html"><i class="fas fa-calendar"></i></a></li>
+                    <li id="newEventButton"><i class="fas fa-hiking"></i></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i></a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class=feed>
-        <div id="my-feed">
-            <!-- The live feed content will be displayed here -->
-            <p>Live Feed Test</p>
+        <div class=feed>
+            <div id="my-feed">
+                <!-- The live feed content will be displayed here -->
+                <p>Live Feed Test</p>
+            </div>
         </div>
-    </div>
-    <div class="stats">
-        <div id="health-stats">
-            <!-- This is where health stats will be populated by ios or smart watch-->
-            <p> health stat test</p>
-            <svg class="battery-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M7 2v4H5v16h14V6h-2V2H7zm2 2h6v2H9V4zm0 4h6v2H9V8zm-2 4h8v10H7V12z"/>
-            </svg>
+        <div class="stats">
+            <div id="health-stats">
+                <!-- This is where health stats will be populated by ios or smart watch-->
+                <p> health stat test</p>
+                <svg class="battery-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M7 2v4H5v16h14V6h-2V2H7zm2 2h6v2H9V4zm0 4h6v2H9V8zm-2 4h8v10H7V12z"/>
+                </svg>
+            </div>
         </div>
-    </div>
-    <!-- Circular container for the photo-->
-    <div class="circular-photo">
-        <img src="images/beach heasdshot.JPG" alt="The user's profile picture">
-    </div>
-    <!--Still needs to be added-->
-    <script src="interact.js"></script>
-    <!-- <script src="profile.js"></script> -->
+        <!-- Circular container for the photo-->
+        <div class="circular-photo">
+            <img src="images/beach heasdshot.JPG" alt="The user's profile picture">
+        </div>
+        <!--Still needs to be added-->
+        <script src="javaScript/interact.js"></script>
+        <!-- <script src="profile.js"></script> -->
+    </main>
+    <!-- <footer>
+        <p>&copy; 2024 OUTDOOR. All rights reserved.</p>
+    </footer> -->
 </body>
 </html>

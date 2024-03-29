@@ -2,7 +2,7 @@
 .menu {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 40px;
 }
 
 #menu-button {
@@ -52,6 +52,7 @@
 }
 
 #dropdown li {
+    width: 25px;
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
