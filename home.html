@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>OUTDOOR</title>
+    <link rel="stylesheet" type="text/css" href="css/home.css"> <!-- General web page styles -->
+    <link rel="stylesheet" href="css/dropdownMenu.css"> <!-- Styles specific to the dropdown meny -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Linking Font Awesome CSS -->
+</head>
+<body>
+    <main>
+        <div class="background-container"></div> <!-- This the background image at the top of the page -->
+        <!-- This only includes the button and the page title -->
+        <div class="content">
+            <h1>OUTDOOR</h1> <!-- Web page name-->
+            <div class="menu"> <!-- Menu button that allows access to calendar, new events, and profile-->
+                <button id="menu-button" class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul id="dropdown" class="hidden">
+                    <li><a href="calendar.html"><i class="fas fa-calendar"></i></a></li> <!-- Access to calendar page -->
+                    <li id="newEventButton"><i class="fas fa-hiking"></i></li> <!-- Create a new event -->
+                    <li><a href="profile.html"><i class="fas fa-user"></i></a></li> <!-- View/edit your profile info -->
+                </ul>
+            </div>
+            <!-- Circular container for the profile photo-->
+            <div class="circular-photo">
+                <img src="images/beach heasdshot.JPG" alt="The user's profile picture">
+            </div>
+        </div>
+        <!-- This contains the live feed of user posts and potentially ad messages -->
+        <div class=feed>
+            <div id="my-feed">
+                <!-- The live feed content will be displayed here -->
+                <p>Live Feed Test</p>
+            </div>
+        </div>
+        <!-- This contains the health stats recorded by the user or accessed from smart phone/watch-->
+        <div class="stats">
+            <div id="health-stats">
+                <!-- This is where health stats will be populated by ios or smart watch-->
+                <p> health stat test</p>
+                <svg class="battery-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M7 2v4H5v16h14V6h-2V2H7zm2 2h6v2H9V4zm0 4h6v2H9V8zm-2 4h8v10H7V12z"/>
+                </svg>
+            </div>
+        </div>
+        <script src="javaScript/interact.js"></script> <!-- Provides the functionality for the button-->
+        <!-- <script src="profile.js"></script> -->
+    </main>
+    <!-- <footer>
+        <p>&copy; 2024 OUTDOOR. All rights reserved.</p>
+    </footer> -->
+</body>
+</html>
