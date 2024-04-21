@@ -1,4 +1,59 @@
 
+/* Gloabal CSS variables */
+:root {
+    --footer-room: 30px; /* Space for the footer at the bottom of the page */
+    --container-height: calc(65% - var(--footer-room)); /* Define a CSS variable with the calculated height */
+}
+
+html, body {
+    margin: 0; /* Reset margin to zero */
+    padding: 0; /* Reset padding to zero */
+}
+
+/* Set the background image on a container */
+.background-container {
+    background-image: url('../images/000000010009.jpg');
+    background-size: 100% auto; /* 100% width and auto height */
+    background-position: center 30%; /* Position at the top center of the container */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    height: 34%; /* Set the container height to 20% of the viewport height */
+    position: fixed; /* Fix the container to the top of the viewport */
+    width: 100%; /* Set the container width to 100% of the viewport width */
+    z-index: -1; /* Place the container in the background layer */
+}
+
+/* Styles upper middle section*/
+.content {
+    text-align: center;
+    padding: 100px;
+    background-color: rgba(255, 255, 255, 0.5); /* Add a semi-transparent white background for better readability */
+}
+
+/* Container for the live feed */
+.feed {
+    width: 66.5%;
+    position: fixed;
+    bottom: var(--footer-room);
+    right: 0;
+    height: var(--container-height);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+/* Stats container class */
+.stats {
+    width: 33%;
+    position: fixed;
+    bottom: var(--footer-room);
+    left: 0;
+    height: var(--container-height);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
 /* Apply a circular shape to the container */
 .circular-photo {
     width: 200px; /* Adjust the size of the circle as needed */
@@ -15,51 +70,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* Maintain aspect ratio and cover the circle */
-}
-
-/* Set the background image on a container */
-.background-container {
-    background-image: url('../images/000000010009.jpg');
-    background-size: 100% auto; /* 100% width and auto height */
-    background-position: center 30%; /* Position at the top center of the container */
-    background-repeat: no-repeat; /* Prevent image from repeating */
-    height: 35%; /* Set the container height to 20% of the viewport height */
-    position: fixed; /* Fix the container to the top of the viewport */
-    width: 100%; /* Set the container width to 100% of the viewport width */
-    z-index: -1; /* Place the container in the background layer */
-    /* display: none; */
-}
-
-/* Add some content to the page */
-.content {
-    text-align: center;
-    padding: 100px;
-    background-color: rgba(255, 255, 255, 0.5); /* Add a semi-transparent white background for better readability */
-}
-
-/* Container for the live feed */
-.feed {
-    width: 66.5%;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    height: 64%;
-    border: 1px solid #000;
-    box-sizing: border-box;
-    padding: 20px;
-    overflow-y: scroll;
-}
-    
-/* Stats container class */
-.stats {
-    width: 33%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 64%;
-    border: 1px solid #000;
-    box-sizing: border-box;
-    padding: 20px;
 }
 
 .battery-icon {

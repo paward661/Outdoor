@@ -1,0 +1,31 @@
+/* Profile info container class */
+.profile-info {
+    position: absolute;
+    top: 240px;
+    left: 0;
+    padding: 20px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}
+
+.profile {
+    position: static;
+    padding: auto;
+}
+
+.interests {
+    margin-top: 20px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}

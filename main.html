@@ -2,37 +2,42 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <!--This really only seems to affect the URL-->
     <title>OUTDOOR</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" href="css/dropdownMenu.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> <!-- General web page styles -->
+    <link rel="stylesheet" href="css/dropdownMenu.css"> <!-- Styles specific to the dropdown meny -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Linking Font Awesome CSS -->
 </head>
 <body>
     <main>
-        <div class="background-container"></div>
+        <div class="background-container"></div> <!-- This the background image at the top of the page -->
+        <!-- This only includes the button and the page title -->
         <div class="content">
-            <h1>OUTDOOR</h1>
-            <div class="menu">
+            <h1>OUTDOOR</h1> <!-- Web page name-->
+            <div class="menu"> <!-- Menu button that allows access to calendar, new events, and profile-->
                 <button id="menu-button" class="hamburger-menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <!-- <button id="menu-button"></button> -->
                 <ul id="dropdown" class="hidden">
-                    <li><a href="calendar.html"><i class="fas fa-calendar"></i></a></li>
-                    <li id="newEventButton"><i class="fas fa-hiking"></i></li>
-                    <li><a href="profile.html"><i class="fas fa-user"></i></a></li>
+                    <li><a href="calendar.html"><i class="fas fa-calendar"></i></a></li> <!-- Access to calendar page -->
+                    <li id="newEventButton"><i class="fas fa-hiking"></i></li> <!-- Create a new event -->
+                    <li><a href="profile.html"><i class="fas fa-user"></i></a></li> <!-- View/edit your profile info -->
                 </ul>
             </div>
+            <!-- Circular container for the profile photo-->
+            <div class="circular-photo">
+                <img src="images/beach heasdshot.JPG" alt="The user's profile picture">
+            </div>
         </div>
+        <!-- This contains the live feed of user posts and potentially ad messages -->
         <div class=feed>
             <div id="my-feed">
                 <!-- The live feed content will be displayed here -->
                 <p>Live Feed Test</p>
             </div>
         </div>
+        <!-- This contains the health stats recorded by the user or accessed from smart phone/watch-->
         <div class="stats">
             <div id="health-stats">
                 <!-- This is where health stats will be populated by ios or smart watch-->
@@ -42,12 +47,7 @@
                 </svg>
             </div>
         </div>
-        <!-- Circular container for the photo-->
-        <div class="circular-photo">
-            <img src="images/beach heasdshot.JPG" alt="The user's profile picture">
-        </div>
-        <!--Still needs to be added-->
-        <script src="javaScript/interact.js"></script>
+        <script src="javaScript/interact.js"></script> <!-- Provides the functionality for the button-->
         <!-- <script src="profile.js"></script> -->
     </main>
     <!-- <footer>
