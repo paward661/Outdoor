@@ -6,6 +6,7 @@
     <title>Calendar</title>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Linking Font Awesome CSS -->
 </head>
 <body>
     <div class="calendar">
@@ -14,13 +15,16 @@
             <h2 id="current-month">Month Year</h2>
             <button id="next-month-btn">&gt;</button>
         </div>
+        <h1><a class="home-title" href="home.html">OUTDOOR</a></h1>
+        <a class="go-home" href="home.html"><i class="fas fa-home"></i></a>
         <div class="calendar-grid">
             <!-- Calendar days will be dynamically generated here -->
         </div>
     </div>
-    <script src="javaScript/calendar.js"></script> <!-- Link to your JavaScript file for functionality -->
+    <script src="javaScript/calendar.js"></script> <!-- calendar functionality -->
     <footer>
         <p>&copy; 2024 OUTDOOR. All rights reserved.</p>
+        <div class="white-box"></div> <!-- White box behind the footer -->
     </footer>
 </body>
 </html>

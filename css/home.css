@@ -1,8 +1,8 @@
 
 /* Gloabal CSS variables */
 :root {
-    --footer-room: 30px; /* Space for the footer at the bottom of the page */
-    --container-height: calc(65% - var(--footer-room)); /* Define a CSS variable with the calculated height */
+    --footer-room: 40px; /* Space for the footer at the bottom of the page */
+    --container-height: calc(65.5% - var(--footer-room)); /* Define a CSS variable with the calculated height */
 }
 
 html, body {
@@ -25,7 +25,7 @@ html, body {
 /* Styles upper middle section*/
 .content {
     text-align: center;
-    padding: 100px;
+    padding: 85px;
     background-color: rgba(255, 255, 255, 0.5); /* Add a semi-transparent white background for better readability */
 }
 
@@ -40,18 +40,6 @@ html, body {
     box-sizing: border-box;
     padding: 20px;
     overflow-y: scroll;
-}
-
-/* Stats container class */
-.stats {
-    width: 33%;
-    position: fixed;
-    bottom: var(--footer-room);
-    left: 0;
-    height: var(--container-height);
-    border: 1px solid #000;
-    box-sizing: border-box;
-    padding: 20px;
 }
 
 /* Apply a circular shape to the container */
@@ -72,14 +60,31 @@ html, body {
     object-fit: cover; /* Maintain aspect ratio and cover the circle */
 }
 
-.battery-icon {
-    width: 24px;
-    height: 24px;
-    fill: #ccc; /* Default color for the battery */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
-  
-/* Adjust the fill color based on the status */
-.battery-icon.green {
-    fill: green; /* Change the battery color to green */
+
+.white-box {
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the footer */
+    left: 0; /* Align with the left edge of the footer */
+    width: 100%; /* Occupy the full width of the footer */
+    height: 100%; /* Set the height of the white box */
+    background-color: white; /* Set the background color to white */
+    z-index: -1; /* Place the white box behind the footer content */
 }
-  
+
+.go-home {
+    position: fixed; 
+    top: 5px; 
+    right: 5px;
+    z-index: 9999;
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from the parent element */
+}

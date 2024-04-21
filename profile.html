@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your custom CSS file for styling -->
+    <link rel="stylesheet" href="css/home.css"> <!-- General styles -->
+    <link rel="stylesheet" href="css/profile.css"> <!-- Page specific styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Linking Font Awesome CSS -->
 </head>
 <body>
-    <header>
-        <h1>User Profile</h1>
-    </header>
     <main>
-        <section class="profile">
-            <div class="profile-picture">
-                <!-- Placeholder profile picture (replace with actual image) -->
-                <img src="placeholder.jpg" alt="Profile Picture">
+        <div class="background-container"></div> <!-- This the background image at the top of the page -->
+        <div class="content">
+            <h1>User Profile</h1> <!-- User Profile page -->
+            <!-- Circular container for the profile photo-->
+            <div class="circular-photo">
+                <img src="images/beach heasdshot.JPG" alt="The user's profile picture">
             </div>
+        </div>
+        <a class="go-home" href="home.html"><i class="fas fa-home"></i></a>
+        <section class="profile">
             <div class="profile-info">
-                <h2>User's Name</h2>
+                <h2>username123</h2>
                 <p>Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo risus.</p>
                 <ul>
                     <li>Email: user@example.com</li>
