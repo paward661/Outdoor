@@ -13,9 +13,14 @@
         <div class="background-container"></div> <!-- This the background image at the top of the page -->
         <div class="content">
             <h1>User Profile</h1> <!-- User Profile page -->
+            <button id="edit-button" class="text-button"><h2>[Edit Profile]</h2></button>
             <!-- Circular container for the profile photo-->
             <div class="circular-photo">
-                <img src="images/beach heasdshot.JPG" alt="The user's profile picture">
+                <img id="profile-pic" src="images/beach heasdshot.JPG" alt="The user's profile picture">
+                <!-- <button id="edit-profile-pic" class="text-button hidden"><h2>[Edit Pic]</h2></button> -->
+                <input type="file" id="file-input" class="hidden">
+                <label for="file-input" id="edit-profile-pic" class="text-button hidden"><h2>[Edit Pic]</h2></label>
+                <div id="overlay" class="hidden"></div>
             </div>
         </div>
         <a class="go-home" href="home.html"><i class="fas fa-home"></i></a>
@@ -36,9 +41,10 @@
                 <li>Interest 1</li>
                 <li>Interest 2</li>
                 <li>Interest 3</li>
-                <!-- Add more interests as needed -->
             </ul>
         </section>
+        <button id="save-button" class="text-button hidden"><h2>[Save Profile]</h2></button>
+        <script src="javaScript/profile.js"></script>
     </main>
     <footer>
         <p>&copy; 2024 OUTDOOR. All rights reserved.</p>

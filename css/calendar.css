@@ -16,14 +16,9 @@
     padding: 10px; /* Padding inside each day block */
     text-align: 1px center; /* Center the text inside the day block */
 }
-a {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit color from the parent element */
-}
 .home-title {
     position: fixed; 
     top: 5%; 
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
 }
-

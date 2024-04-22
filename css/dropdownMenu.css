@@ -65,12 +65,3 @@
     text-decoration: none;
     color: #333;
 }
-
-/* Show the dropdown when the button is clicked */
-.show {
-    display: unset;
-}
-
-.hidden {
-    display: none;
-}
