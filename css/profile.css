@@ -7,6 +7,19 @@
     box-sizing: border-box;
 }
 
+.user-info {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+}
+
+.user-text {
+    flex: 1;
+}
+
+.user-text-input {
+    flex: 1;
+}
+
 .profile {
     position: static;
     padding: auto;
@@ -66,4 +79,10 @@ header {
     background-color: rgba(128, 128, 128, 0.5); /* Grey transparent background */
     border-radius: 50%; /* Ensure the overlay matches the circular shape */
     z-index: 1; /* Place the overlay behind the text */
+}
+
+.text-input {
+    height: 80px;
+    width: 100%;
+
 }

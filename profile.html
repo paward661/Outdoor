@@ -17,7 +17,6 @@
             <!-- Circular container for the profile photo-->
             <div class="circular-photo">
                 <img id="profile-pic" src="images/beach heasdshot.JPG" alt="The user's profile picture">
-                <!-- <button id="edit-profile-pic" class="text-button hidden"><h2>[Edit Pic]</h2></button> -->
                 <input type="file" id="file-input" class="hidden">
                 <label for="file-input" id="edit-profile-pic" class="text-button hidden"><h2>[Edit Pic]</h2></label>
                 <div id="overlay" class="hidden"></div>
@@ -27,11 +26,21 @@
         <section class="profile">
             <div class="profile-info">
                 <h2>username123</h2>
-                <p>Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo risus.</p>
+                <p id="text-bio">Bio: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo risus.</p>
+                <input type="text" id="text-input-bio" placeholder="Enter text here" class="text-input hidden">
                 <ul>
-                    <li>Email: user@example.com</li>
-                    <li>Phone: +1234567890</li>
-                    <li>Location: City, Country</li>
+                    <div class="user-info">
+                        <li id="text-email" class="user-text">Email: user@example.com</li>
+                        <input type="text" id="text-input-email" placeholder="Enter a valid Email" class="user-text-input hidden">
+                    </div>
+                    <div class="user-info">
+                        <li id="text-phone" class="user-text">Phone: +1234567890</li>
+                        <input type="text" id="text-input-phone" placeholder="Enter a valid phone number" class="user-text-input hidden">
+                    </div>
+                    <div class="user-info">
+                        <li id="text-loc" class="user-text">Location: City, Country</li>
+                        <input type="text" id="text-input-loc" placeholder="Enter a valid location" class="user-text-input hidden">
+                    </div>
                 </ul>
             </div>
         </section>
