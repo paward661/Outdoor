@@ -1,5 +1,6 @@
 // Get references
 const editButton = document.getElementById('edit-button');
+const editButtonText = document.getElementById('edit-button-text');
 const editProfilePicButton = document.getElementById('edit-profile-pic');
 const profilePicOverlay = document.getElementById('overlay');
 const saveEditsButton = document.getElementById('save-button');
@@ -12,9 +13,10 @@ const locInput = document.getElementById('text-input-loc');
 const emailText = document.getElementById('text-email');
 const phoneText = document.getElementById('text-phone');
 const locText = document.getElementById('text-loc');
+var imageSrc = document.getElementById('profile-pic').src
 
-
-// Need to fix so that it adds and then removes the space taken by the text boxes
+// Need to edit function so that it throws away image if cancel is selected
+// function editOn(cancelEdit = true) {
 function editOn() {
     // Toggle the 'hidden' class
     editProfilePicButton.classList.toggle('hidden');
@@ -27,24 +29,27 @@ function editOn() {
 
     if (bioTextInput.classList.contains('hidden')) {
         document.documentElement.style.setProperty('--profile-info-height', `23%`);
+        editButtonText.textContent = "[Edit Profile]";
     } else {
         // Retrieve the current value of the CSS variable --profile-info-height
         const currentHeight = getComputedStyle(document.documentElement).getPropertyValue('--profile-info-height');
-        console.log(currentHeight);
 
         // Parse the numeric portion of the value (removing 'px' if present)
         const numericHeightPercentage = parseFloat(currentHeight);
-        console.log(numericHeightPercentage);
 
         // Add 80px to the numeric value
         const viewportHeight = window.innerHeight;
         const newHeight = viewportHeight * (numericHeightPercentage / 100) + 80;
         // const newHeight = 80;
-        console.log(newHeight);
 
         // Update the CSS variable with the new value
         document.documentElement.style.setProperty('--profile-info-height', `${newHeight}px`);
+        editButtonText.textContent = "[Cancel]";
     }
+
+    // if (cancelEdit && editButtonText.textContent == "[Cancel]") {
+
+    // }
 }
 
 function uploadImage() {
@@ -53,35 +58,49 @@ function uploadImage() {
         var reader = new FileReader();
         reader.onload = function(event) {
             var uploadedImageSrc = event.target.result;
-            document.getElementById('profile-pic').src = uploadedImageSrc;
+
+            fetch('https://rc8a0osdn1.execute-api.us-west-1.amazonaws.com/v1/profile-pic', {
+                method: 'POST',
+                body: uploadedImageSrc, // Pass the base64-encoded image data
+                headers: {
+                    'Content-Type': 'image/jpeg', // Set the content type appropriately
+                },
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Image uploaded successfully
+                    document.getElementById('profile-pic').src = uploadedImageSrc;
+                } else {
+                    console.error('Image upload failed:', response.statusText);
+                }
+            })
+            .catch(error => {
+                console.error('Error uploading image:', error);
+            });
         };
         reader.readAsDataURL(selectedFile);
     }
 }
 
-// Need to fix saving the default values. I think the problem is once I set .value = it will always be true.
-// Should check both not true and not equal to default text. Might be worth using a var for each defaut text.
 function save() {
-    if (bioTextInput.value) {
-        bioText.textContent = "Bio: "+bioTextInput.value;
+    const defaultBioText = "Enter text here";
+    const preBioText = "Bio: ";
+    const defaultEmailText = "Enter a valid Email";
+    const preEmailText = "Email: ";
+    const defaultPhoneText = "Enter a valid phone number";
+    const prePhoneText = "Phone: ";
+    const defaultLocText = "Enter a valid location";
+    const preLocText = "Location: ";
+    const itemList = [[bioTextInput, bioText,   defaultBioText,   preBioText], 
+                      [emailInput,   emailText, defaultEmailText, preEmailText], 
+                      [phoneInput,   phoneText, defaultPhoneText, prePhoneText], 
+                      [locInput,     locText,   defaultLocText,   preLocText]];
+    for (const [input, output, defaultText, preText] of itemList) {
+        if (input.value && input.value !== defaultText) {
+            output.textContent = preText+input.value;
+        }
+        input.value = defaultText;
     }
-    bioTextInput.value = "Enter text here";
-
-    if (emailInput.value) {
-        emailText.textContent = "Email: "+emailInput.value;
-    }
-    emailInput.value = "Enter a valid Email";
-
-    if (phoneInput.value) {
-        phoneText.textContent = "Phone: "+phoneInput.value;
-    }
-    phoneInput.value = "Enter a valid phone number";
-
-    if (locInput.value) {
-        locText.textContent = "Location: "+locInput.value;
-    }
-    locInput.value = "Enter a valid location";
-    
     editOn();
 }
 
