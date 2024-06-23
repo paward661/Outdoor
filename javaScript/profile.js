@@ -1,3 +1,8 @@
+//#####################################################################################################################
+// Need to add an API call to get the profile pic. (Needs to be applied in a way that propagates to the home page)
+// Use a default profile pic if there is no image stored at the expected location
+//#####################################################################################################################
+
 // Get references to html elements
 const editButton = document.getElementById('edit-button');
 const editButtonText = document.getElementById('edit-button-text');
@@ -16,8 +21,6 @@ const locText = document.getElementById('text-loc');
 var imageSrc = document.getElementById('profile-pic').src;
 var uploadedImageSrc = imageSrc;
 
-// Need to edit function so that it throws away image if cancel is selected
-// function editOn(cancelEdit = true) {
 // Edit the profile information
 function editOn(cancelEdit) {
     // Unless editOn() used in save function, cancelEdit assumed to be true
