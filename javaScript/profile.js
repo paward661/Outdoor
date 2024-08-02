@@ -69,6 +69,7 @@ function uploadImage() {
         // Displays profile pic after an image is selected
         reader.onload = function(event) {
             uploadedImageSrc = event.target.result;
+            // console.log(uploadedImageSrc)
             document.getElementById('profile-pic').src = uploadedImageSrc;
         };
         reader.readAsDataURL(selectedFile);
@@ -76,7 +77,7 @@ function uploadImage() {
 }
 
 function saveImageToS3() {
-    fetch('https://rc8a0osdn1.execute-api.us-west-1.amazonaws.com/v2/profile-pic', {
+    fetch('https://rc8a0osdn1.execute-api.us-west-1.amazonaws.com/v3/profile-pic', {
             method: 'POST',
             body: uploadedImageSrc, // Pass the base64-encoded image data
             headers: {
@@ -86,15 +87,12 @@ function saveImageToS3() {
         .then(response => {
             if (response.ok) {
                 // Image uploaded successfully
-                imageSrc = uploadedImageSrc
-                return response.json()
+                imageSrc = uploadedImageSrc;
+                // return response.json();
+                // console.log(response.json());
             } else {
                 console.error('Image upload failed:', response.statusText);
             }
-        })
-        .then(data => {
-          // Handle the parsed data (e.g., update UI)
-          console.log(data);
         })
         .catch(error => {
             console.error('Error uploading image:', error);
@@ -102,17 +100,18 @@ function saveImageToS3() {
 }
 
 function getImageFromS3() {
-    fetch('https://rc8a0osdn1.execute-api.us-west-1.amazonaws.com/v2/profile-pic', {
+    fetch('https://rc8a0osdn1.execute-api.us-west-1.amazonaws.com/v3/profile-pic', {
             method: 'GET',
         })
         .then(response => {
             if (response.ok) {
-                return response.text()
+                return response.text();
             } else {
                 console.error('Image retrival from S3 failed:', response.statusText);
             }
         })
         .then(data => {
+            // console.log(data);
             document.getElementById('profile-pic').src = data;
         })
         .catch(error => {
@@ -142,9 +141,11 @@ function save() {
     }
     saveImageToS3();
     editOn(false);
+    // getImageFromS3();
 }
 
 getImageFromS3();
+// testPreflight();
 
 // Add a click event listener to the edit button
 editButton.addEventListener('click', editOn);
