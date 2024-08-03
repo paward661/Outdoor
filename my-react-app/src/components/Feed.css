@@ -1,0 +1,12 @@
+/* Container for the live feed */
+.feed {
+    width: 66.5%;
+    position: fixed;
+    bottom: var(--footer-room);
+    right: 0;
+    height: var(--container-height);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow-y: scroll;
+}
