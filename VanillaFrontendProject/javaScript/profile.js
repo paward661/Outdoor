@@ -3,6 +3,8 @@
 // Use a default profile pic if there is no image stored at the expected location
 //#####################################################################################################################
 
+// import { profilePicS3 } from './profilePic.js';
+
 // Get references to html elements
 const editButton = document.getElementById('edit-button');
 const editButtonText = document.getElementById('edit-button-text');
@@ -140,12 +142,12 @@ function save() {
         input.value = defaultText;
     }
     saveImageToS3();
+    // profilePicS3.saveImageToS3(uploadedImageSrc);
     editOn(false);
-    // getImageFromS3();
+    getImageFromS3();
 }
 
 getImageFromS3();
-// testPreflight();
 
 // Add a click event listener to the edit button
 editButton.addEventListener('click', editOn);
