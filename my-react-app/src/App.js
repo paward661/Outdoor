@@ -1,12 +1,11 @@
 // import logo from './logo.svg';
 // import './App.css';
-// import Message from './Message';
-import ProfilePic from "./components/ProfilePic";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div>
-      <ProfilePic></ProfilePic>
+      <Header />
     </div>
   );
   // return (

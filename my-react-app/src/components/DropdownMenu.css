@@ -1,0 +1,71 @@
+/* Basic styling for the dropdown menu */
+.menu {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+#menu-button {
+    background-color: #0074d900;
+    /* color: #fff; */
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger-menu {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    /* cursor: pointer; */
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin-bottom: 4px;
+  }
+  
+  /* Styling for the individual bars */
+  .hamburger-menu span:nth-child(2) {
+    width: 25px;
+  }
+  
+  .hamburger-menu span:nth-child(3) {
+    width: 25px;
+  }
+
+#dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* display: none; */
+}
+
+#dropdown li {
+    width: 25px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#dropdown li:last-child {
+    border-bottom: none;
+}
+
+#dropdown a {
+    text-decoration: none;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}

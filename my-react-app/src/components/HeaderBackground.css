@@ -1,0 +1,19 @@
+/* Gloabal CSS variables */
+:root {
+    --footer-room: 40px; /* Space for the footer at the bottom of the page */
+    --banner-height: 34%; /* Height of the background photo banner */
+    --profile-info-height: 23%; /* Height of the profile info section */
+    --container-height: calc(100% - var(--banner-height) - var(--footer-room)); /* Define a CSS variable with the calculated height */
+}
+
+/* Set the background image on a container */
+.background-container {
+    background-image: url('../../public/000000010009.jpg');
+    background-size: 100% auto; /* 100% width and auto height */
+    background-position: center 30%; /* Position at the top center of the container */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    height: var(--banner-height); /* Set the container height to 20% of the viewport height */
+    position: fixed; /* Fix the container to the top of the viewport */
+    width: 100%; /* Set the container width to 100% of the viewport width */
+    z-index: -1; /* Place the container in the background layer */
+}

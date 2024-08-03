@@ -1,10 +1,9 @@
+import "./ProfilePic.css";
+
 function ProfilePic() {
   return (
     <div className="circular-photo">
-      <img
-        src="../../../images/beach heasdshot.JPG"
-        alt="The user's profile picture"
-      />
+      <img src="/BeachHeadshot.jpg" alt="The user's profile" />
     </div>
   );
 }

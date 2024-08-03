@@ -1,0 +1,6 @@
+/* Styles upper middle section*/
+.content {
+    text-align: center;
+    padding: 85px;
+    background-color: rgba(255, 255, 255, 0.5); /* Add a semi-transparent white background for better readability */
+}
