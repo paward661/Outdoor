@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Calendar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 function Calendar() {
   // Create a new Date object representing the current date and time
@@ -7,79 +10,58 @@ function Calendar() {
   const [year, setYear] = useState(currentDate.getFullYear());
   const [month, setMonth] = useState(currentDate.getMonth() + 1);
 
-  // Get a reference to the calendar grid container
-  const calendarGrid = document.querySelector(".calendar-grid");
-
-  // Get a reference to the calendar header
-  const calendarHeader = document.getElementById("current-month");
-
   // Function to generate the calendar grid for a given month and year
   function generateCalendarGrid(month, year) {
-    // Clear the existing calendar grid
-    calendarGrid.innerHTML = "";
-
     // Update the text content of the current-month element
     const formattedMonth = new Date(year, month - 1).toLocaleString("default", {
       month: "long",
     });
-    calendarHeader.textContent = `${formattedMonth} ${year}`;
 
-    // Get the number of days in the month
+    // Generate calendar days here
     const daysInMonth = new Date(year, month, 0).getDate();
+    const calendarDays = Array.from(
+      { length: daysInMonth },
+      (_, index) => index + 1
+    );
 
-    // Loop through each day of the month
-    for (let day = 1; day <= daysInMonth; day++) {
-      // Create a new calendar day element
-      const calendarDay = document.createElement("div");
-      calendarDay.classList.add("calendar-day");
-      calendarDay.textContent = day;
-
-      // Append the day element to the calendar grid
-      calendarGrid.appendChild(calendarDay);
-    }
+    return (
+      <div className="calendar">
+        <div className="calendar-header">
+          <button onClick={backwardIncrementMonth}>&lt;</button>
+          <h2 id="current-month">
+            {formattedMonth} {year}
+          </h2>
+          <button onClick={forwardIncrementMonth}>&gt;</button>
+        </div>
+        <Link to="/">
+          <h1 className="home-title">OUTDOOR</h1>
+        </Link>
+        <div className="go-home">
+          <Link to="/">
+            <FontAwesomeIcon icon={faHome} />
+          </Link>
+        </div>
+        <div className="calendar-grid">
+          {calendarDays.map((day) => (
+            <div key={day} className="calendar-day">
+              {day}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
   }
-
-  // Create month incrementing functions
+  // Need to come back and handle year rollover
+  // Month incrementing functions
   function forwardIncrementMonth() {
-    month += 1;
-    if (month > 12) {
-      month -= 12;
-      year += 1;
-    }
-    generateCalendarGrid(month, year);
+    setMonth((prevMonth) => (prevMonth === 12 ? 1 : prevMonth + 1));
   }
+
   function backwardIncrementMonth() {
-    month -= 1;
-    if (month < 1) {
-      month += 12;
-      year -= 1;
-    }
-    generateCalendarGrid(month, year);
+    setMonth((prevMonth) => (prevMonth === 1 ? 12 : prevMonth - 1));
   }
 
-  // Example usage: generate the calendar grid for November 2023
-  generateCalendarGrid(month, year); // Note: JavaScript months are zero-based, so November is month index 10
-
-  return (
-    <div class="calendar">
-      <div class="calendar-header">
-        <button onClick={backwardIncrementMonth}>&lt;</button>
-        <h2 id="current-month">Month Year</h2>
-        <button onClick={forwardIncrementMonth}>&gt;</button>
-      </div>
-      <h1>
-        <a class="home-title" href="home.html">
-          OUTDOOR
-        </a>
-      </h1>
-      <a class="go-home" href="home.html">
-        <i class="fas fa-home"></i>
-      </a>
-      <div class="calendar-grid">
-        {/* Calendar days will be dynamically generated here */}
-      </div>
-    </div>
-  );
+  return generateCalendarGrid(month, year);
 }
 
 export default Calendar;

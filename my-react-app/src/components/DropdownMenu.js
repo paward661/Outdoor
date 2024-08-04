@@ -44,7 +44,7 @@ function DropdownMenu() {
       <ul id="dropdown" className={isDropdownVisible ? "" : "hidden"}>
         <li>
           <Link to="/calendar">
-            <FontAwesomeIcon icon={faCalendar} /> Calendar
+            <FontAwesomeIcon icon={faCalendar} />
           </Link>
         </li>{" "}
         {/* Access to calendar page */}
