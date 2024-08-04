@@ -1,0 +1,24 @@
+.calendar {
+    width: 100vw; /* Set width to 100% of viewport width */
+    height: 100vh; /* Set height to 100% of viewport height */
+}
+.calendar-grid {
+    width: 100vw; /* Set width to 100% of viewport width */
+    height: 74vh; /* Set height to 100% of viewport height */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+    grid-template-rows: repeat(5, 1fr); /* Automatically adjust row height based on content */
+    /*grid-template-rows: repeat(auto-fill, minmax(50px, 1fr)); /* Automatically adjust row height based on content with minimum height of 50px and maximum height of 1fr */
+    gap: 5px; /* Gap between day blocks */
+  }
+.calendar-day {
+    border: 1px solid #ccc; /* Border around each day block */
+    padding: 10px; /* Padding inside each day block */
+    text-align: 1px center; /* Center the text inside the day block */
+}
+.home-title {
+    position: fixed; 
+    top: 5%; 
+    left: 50%;
+    transform: translateX(-50%);
+}

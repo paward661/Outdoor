@@ -7,7 +7,7 @@ function Header() {
   return (
     <div>
       <HeaderBackground />
-      <div class="content">
+      <div className="content">
         <h1>OUTDOOR</h1> {/* Web page name */}
         <DropdownMenu />
         <ProfilePic />

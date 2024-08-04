@@ -1,0 +1,30 @@
+/* Stats container class */
+.stats {
+    width: 33.5%;
+    position: fixed;
+    bottom: var(--footer-room);
+    left: 0;
+    height: var(--container-height);
+    border: 1px solid #000;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.meter-container {
+    display: flex;
+    align-items: center;
+    width: 200px; /* Adjust the width of the meter container */
+    height: 20px; /* Adjust the height of the meter bars */
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.meter-bar {
+    height: 100%;
+    background-color: #ddd; /* Default color for empty meter */
+    transition: width 0.5s; /* Smooth transition for width change */
+}
+
+.meter-bar.fill {
+    background-color: #00ff00; /* Green color for filled meter */
+}

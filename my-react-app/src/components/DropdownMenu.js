@@ -6,6 +6,7 @@ import {
   faHiking,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function DropdownMenu() {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -28,19 +29,23 @@ function DropdownMenu() {
     };
   }, []);
   return (
-    <div class="menu">
+    <div className="menu">
       {" "}
       {/* Menu button that allows access to calendar, new events, and profile */}
-      <button id="menu-button" class="hamburger-menu" onClick={toggleDropdown}>
+      <button
+        id="menu-button"
+        className="hamburger-menu"
+        onClick={toggleDropdown}
+      >
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <ul id="dropdown" class={isDropdownVisible ? "" : "hidden"}>
+      <ul id="dropdown" className={isDropdownVisible ? "" : "hidden"}>
         <li>
-          <a href="calendar.html">
-            <FontAwesomeIcon icon={faCalendar} />
-          </a>
+          <Link to="/calendar">
+            <FontAwesomeIcon icon={faCalendar} /> Calendar
+          </Link>
         </li>{" "}
         {/* Access to calendar page */}
         <li id="new-event-button">
@@ -48,9 +53,9 @@ function DropdownMenu() {
         </li>{" "}
         {/* Create a new event */}
         <li>
-          <a href="profile.html">
+          <Link to="/profile">
             <FontAwesomeIcon icon={faUser} />
-          </a>
+          </Link>
         </li>{" "}
         {/* View/edit your profile info */}
       </ul>

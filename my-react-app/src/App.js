@@ -1,33 +1,21 @@
-// import logo from './logo.svg';
-// import './App.css';
-import Header from "./components/Header";
-import Feed from "./components/Feed";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home.js";
+import Calendar from "./components/Calendar.js";
+import Profile from "./components/Profile.js";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Feed />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/calendar" element={<Calendar />} />
+      </Routes>
+    </BrowserRouter>
+    // <div>
+    //   <Calendar />
+    // </div>
   );
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
 }
 
 export default App;
