@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Calendar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import GoHome from "./GoHome";
 
 function Calendar() {
   // Create a new Date object representing the current date and time
@@ -36,11 +35,7 @@ function Calendar() {
         <Link to="/">
           <h1 className="home-title">OUTDOOR</h1>
         </Link>
-        <div className="go-home">
-          <Link to="/">
-            <FontAwesomeIcon icon={faHome} />
-          </Link>
-        </div>
+        <GoHome show={true} />
         <div className="calendar-grid">
           {calendarDays.map((day) => (
             <div key={day} className="calendar-day">

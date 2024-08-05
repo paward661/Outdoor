@@ -1,0 +1,95 @@
+/* Profile info container class */
+.profile-info {
+    position: absolute;
+    top: var(--banner-height);
+    padding: 10px;
+    height: var(--profile-info-height);
+    box-sizing: border-box;
+}
+
+.user-info {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+}
+
+.user-text {
+    flex: 1;
+}
+
+.user-text-input {
+    flex: 1;
+}
+
+.profile {
+    position: static;
+    padding: auto;
+}
+
+.interests {
+    --interests-start-loc: calc(var(--banner-height) + var(--profile-info-height));
+    position: absolute;
+    top: var(--interests-start-loc);
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+header {
+    text-align: center;
+}
+
+.text-button {
+    background: none;
+    border: none;
+    color: inherit; /* Set text color */
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    text-decoration: none; /* Add underline effect to mimic link */
+    /* z-index: 9999; */
+}
+
+.text-button:hover {
+    text-decoration: none; /* Remove underline effect on hover */
+}
+
+#save-button {
+    text-align: center;
+    position: absolute;
+    bottom: var(--footer-room);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#edit-profile-pic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the button */
+    z-index: 9998;
+    white-space: nowrap; /* Keep text on one line */
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.5); /* Grey transparent background */
+    border-radius: 50%; /* Ensure the overlay matches the circular shape */
+    z-index: 1; /* Place the overlay behind the text */
+}
+
+.text-input {
+    height: 80px;
+    width: 100%;
+
+}
+
+#edit-button {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+}

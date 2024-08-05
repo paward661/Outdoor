@@ -3,13 +3,12 @@ import DropdownMenu from "./DropdownMenu.js";
 import ProfilePic from "./ProfilePic.js";
 import "./Header.css";
 
-function Header() {
+function Header({ pageTitle }) {
   return (
     <div>
       <HeaderBackground />
       <div className="content">
-        <h1>OUTDOOR</h1> {/* Web page name */}
-        <DropdownMenu />
+        <h1>{pageTitle}</h1> {/* Web page name */}
         <ProfilePic />
       </div>
     </div>
