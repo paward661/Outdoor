@@ -51,14 +51,23 @@ function Calendar() {
       </div>
     );
   }
-  // Need to come back and handle year rollover
+
   // Month incrementing functions
   function forwardIncrementMonth() {
-    setMonth((prevMonth) => (prevMonth === 12 ? 1 : prevMonth + 1));
+    if (month === 12) {
+      setMonth(1);
+      setYear((prevYear) => prevYear + 1);
+    } else {
+      setMonth((prevMonth) => prevMonth + 1);
+    }
   }
 
   function backwardIncrementMonth() {
-    setMonth((prevMonth) => (prevMonth === 1 ? 12 : prevMonth - 1));
+    if (month === 1) {
+      setMonth(12);
+      setYear((prevYear) => prevYear - 1);
+    }
+    setMonth((prevMonth) => prevMonth - 1);
   }
 
   return generateCalendarGrid(month, year);
