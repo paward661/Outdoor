@@ -6,7 +6,7 @@ import DropdownMenu from "./DropdownMenu";
 function Home() {
   return (
     <div>
-      <Header pageTitle={"OUTDOOR"} />
+      <Header editOn={false} pageTitle={"OUTDOOR"} />
       <DropdownMenu />
       <Feed />
       <Stats />

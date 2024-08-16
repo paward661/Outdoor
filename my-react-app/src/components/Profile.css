@@ -70,17 +70,6 @@ header {
     white-space: nowrap; /* Keep text on one line */
 }
 
-#overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(128, 128, 128, 0.5); /* Grey transparent background */
-    border-radius: 50%; /* Ensure the overlay matches the circular shape */
-    z-index: 1; /* Place the overlay behind the text */
-}
-
 .text-input {
     height: 80px;
     width: 100%;
