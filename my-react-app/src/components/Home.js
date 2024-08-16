@@ -2,11 +2,13 @@ import Header from "./Header";
 import Feed from "./Feed";
 import Stats from "./Stats";
 import DropdownMenu from "./DropdownMenu";
+import ProfilePic from "./ProfilePic.js";
 
 function Home() {
   return (
     <div>
-      <Header editOn={false} pageTitle={"OUTDOOR"} />
+      <Header pageTitle={"OUTDOOR"} />
+      <ProfilePic editOn={false} />
       <DropdownMenu />
       <Feed />
       <Stats />

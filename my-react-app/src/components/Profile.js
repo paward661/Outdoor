@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./Header";
 import GoHome from "./GoHome";
+import ProfilePic from "./ProfilePic.js";
 import "./Profile.css";
 
 function Profile() {
@@ -82,7 +83,8 @@ function Profile() {
   }
   return (
     <div>
-      <Header editOn={editOn} pageTitle={"User Profile"} />
+      <Header pageTitle={"User Profile"} />
+      <ProfilePic editOn={editOn} />
       <GoHome show={!editOn} />
       <button
         id="edit-button"
