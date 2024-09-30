@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function ProfileInfo({ editOn, save, infoReset }) {
   // Profile info defaults and prepended text
@@ -50,14 +50,59 @@ function ProfileInfo({ editOn, save, infoReset }) {
   useEffect(() => {
     if (save) {
       saveInfo();
+      saveInterests();
     }
   }, [save]);
 
   useEffect(() => {
     if (infoReset) {
       infoResetFunc();
+      interestReset();
     }
   }, [infoReset]);
+
+  const defaultInterest1 = "Interest 1";
+  const defaultInterest2 = "Interest 2";
+  const defaultInterest3 = "Interest 3";
+
+  const [interests, setInterests] = useState({
+    interest1: defaultInterest1,
+    interest2: defaultInterest2,
+    interest3: defaultInterest3,
+  });
+
+  const [interestsShadow, setInterestsShadow] = useState({
+    interest1: defaultInterest1,
+    interest2: defaultInterest2,
+    interest3: defaultInterest3,
+  });
+
+  const options = ["Football", "Tennis", "Soccer", "Basketball", "Baseball"];
+
+  const handleChange = (event, interestKey) => {
+    setInterests({
+      ...interests,
+      [interestKey]: event.target.value,
+    });
+  };
+
+  function saveInterests() {
+    for (const [key, value] of Object.entries(interests)) {
+      setInterestsShadow((prevInterestsShadow) => ({
+        ...prevInterestsShadow,
+        [key]: value,
+      }));
+    }
+  }
+
+  function interestReset() {
+    for (const [key, value] of Object.entries(interestsShadow)) {
+      setInterests((prevInterests) => ({
+        ...prevInterests,
+        [key]: value,
+      }));
+    }
+  }
 
   return (
     <div>
@@ -114,9 +159,25 @@ function ProfileInfo({ editOn, save, infoReset }) {
       <section className="interests">
         <h2>Interests</h2>
         <ul>
-          <li>Interest 1</li>
-          <li>Interest 2</li>
-          <li>Interest 3</li>
+          {Object.keys(interests).map((key, index) => (
+            <li key={index}>
+              {editOn == false ? interests[key] : ""}
+              <select
+                value={interests[key]}
+                onChange={(event) => handleChange(event, key)}
+                className={editOn == false ? "hidden" : ""}
+              >
+                <option value={interests[key]} disabled>
+                  {interests[key]}
+                </option>
+                {options.map((option, idx) => (
+                  <option key={idx} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </li>
+          ))}
         </ul>
       </section>
     </div>

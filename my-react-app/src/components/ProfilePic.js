@@ -94,7 +94,7 @@ function ProfilePic({ editOn, save, picReset }) {
       <input
         type="file"
         id="file-input"
-        className={editOn === false ? "hidden" : ""}
+        className="hidden"
         onChange={uploadImage}
       />
       <label
