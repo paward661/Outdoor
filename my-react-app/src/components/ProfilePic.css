@@ -31,3 +31,12 @@ img {
     border-radius: 50%; /* Ensure the overlay matches the circular shape */
     z-index: 1; /* Place the overlay behind the text */
 }
+
+#edit-profile-pic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the button */
+    z-index: 9998;
+    white-space: nowrap; /* Keep text on one line */
+}

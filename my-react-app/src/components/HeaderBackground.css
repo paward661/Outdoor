@@ -2,7 +2,6 @@
 :root {
     --footer-room: 40px; /* Space for the footer at the bottom of the page */
     --banner-height: 34%; /* Height of the background photo banner */
-    --profile-info-height: 23%; /* Height of the profile info section */
     --container-height: calc(100% - var(--banner-height) - var(--footer-room)); /* Define a CSS variable with the calculated height */
 }
 

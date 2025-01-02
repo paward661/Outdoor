@@ -14,6 +14,7 @@ function Profile() {
     // When the save state is enabled close the edit UI
     if (save) {
       toggleEdit(false);
+      setSave(false);
     }
   }, [save]);
 
@@ -22,29 +23,9 @@ function Profile() {
     setEditOn(!editOn);
 
     if (!editOn) {
-      // Initialize edit GUI
       // Reset the reset flag when edit is turned back on
       setReset(false);
-      // Retrieve the current value of the CSS variable --profile-info-height
-      const currentHeight = getComputedStyle(
-        document.documentElement
-      ).getPropertyValue("--profile-info-height");
-      // Parse the numeric portion of the value
-      const numericHeightPercentage = parseFloat(currentHeight);
-      // Add 80px to the numeric value
-      const viewportHeight = window.innerHeight;
-      const newHeight = viewportHeight * (numericHeightPercentage / 100) + 80;
-      // Set the new height
-      document.documentElement.style.setProperty(
-        "--profile-info-height",
-        `${newHeight}px`
-      );
     } else {
-      // Close edit GUI
-      document.documentElement.style.setProperty(
-        "--profile-info-height",
-        `23%`
-      );
       if (cancelEdit) {
         // Trigger reset functions in ProfileInfo and ProfilePic. Should reset inputs.
         setReset(true);

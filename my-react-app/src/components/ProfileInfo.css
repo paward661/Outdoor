@@ -1,0 +1,36 @@
+/* Profile info container class */
+.profile-info {
+    position: static;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.profile {
+    position: static;
+    padding: auto;
+}
+
+.interests {
+    position: static;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+}
+
+.user-text {
+    flex: 1;
+}
+
+.user-text-input {
+    flex: 1;
+}
+
+.text-input {
+    height: 80px;
+    width: 100%;
+
+}

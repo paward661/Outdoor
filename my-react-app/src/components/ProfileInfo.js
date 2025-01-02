@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./ProfileInfo.css";
 
 function ProfileInfo({ editOn, save, infoReset }) {
   // Profile info defaults and prepended text
